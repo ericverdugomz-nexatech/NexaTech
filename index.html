@@ -1,0 +1,2218 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="NexaTech - IT & Cybersecurity Services. Infraestructura, redes y seguridad para pequeñas empresas.">
+
+    <title>NexaTech | IT & Cybersecurity Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* CONFIGURACIÓN GENERAL */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #070b14;
+            color: #edf4ff;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+
+        :root {
+            --background: #070b14;
+            --panel: #101827;
+            --panel-light: #17243a;
+            --cyan: #7de3f5;
+            --gold: #d7bd83;
+            --white: #edf4ff;
+            --muted: #a7b5c9;
+            --border: rgba(160,190,225,0.16);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1160px;
+            margin: auto;
+        }
+
+        .gradient {
+            background: linear-gradient(
+                100deg,
+                #ffffff,
+                #7de3f5,
+                #d7bd83
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+
+        /* NAVEGACIÓN */
+
+        header {
+            background: rgba(7,11,20,0.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 80px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Manrope', sans-serif;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: var(--cyan);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: var(--muted);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cyan);
+        }
+
+
+        /* INICIO */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 100px 0;
+
+            background:
+                radial-gradient(
+                    ellipse at 80% 10%,
+                    rgba(42,103,137,0.25),
+                    transparent 45%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+
+            margin: 25px 0;
+        }
+
+        .hero h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #dce7f5;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border: 1px solid rgba(125,227,245,0.5);
+            border-radius: 5px;
+
+            background: rgba(125,227,245,0.12);
+
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: rgba(125,227,245,0.25);
+            border-color: var(--cyan);
+        }
+
+        .button.secondary {
+            background: transparent;
+            border-color: var(--border);
+            color: var(--muted);
+        }
+
+
+        /* SECCIONES GENERALES */
+
+        section {
+            padding: 90px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 38px;
+            line-height: 1.2;
+            margin: 12px 0 20px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+
+        /* PRESENTACIÓN */
+
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .presentation-text p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .presentation-card {
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: linear-gradient(
+                145deg,
+                #152238,
+                #0d1523
+            );
+        }
+
+        .presentation-card h3 {
+            color: var(--cyan);
+            font-family: 'Manrope', sans-serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .presentation-card p {
+            color: var(--muted);
+        }
+
+
+        /* ESPECIALIDADES */
+
+        .specialties {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+
+            margin-top: 30px;
+        }
+
+        .specialty {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            padding: 17px;
+
+            color: #dce8f6;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .specialty::before {
+            content: "✦";
+            color: var(--cyan);
+            margin-right: 10px;
+        }
+
+        .specialty:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+        }
+
+
+        /* SERVICIOS */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 28px;
+
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+        }
+
+        .service-icon {
+            color: var(--cyan);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* PROYECTOS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: linear-gradient(
+                145deg,
+                #152238,
+                #0d1523
+            );
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+        }
+
+        .project-number {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 23px;
+            margin: 15px 0;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .tag {
+            padding: 5px 11px;
+
+            border: 1px solid var(--border);
+            border-radius: 30px;
+
+            color: var(--cyan);
+            font-size: 11px;
+        }
+
+        .project-link {
+            color: var(--cyan);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .project-link:hover {
+            color: white;
+        }
+
+
+        /* PÁGINAS INDIVIDUALES */
+
+        .project-page {
+            display: none;
+            min-height: 80vh;
+        }
+
+        .project-page.active {
+            display: block;
+        }
+
+        .project-hero {
+            padding: 90px 0 60px;
+
+            background: radial-gradient(
+                ellipse at 80% 0%,
+                rgba(42,103,137,0.22),
+                transparent 50%
+            );
+        }
+
+        .project-hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(38px, 6vw, 62px);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .project-hero p {
+            color: var(--muted);
+            max-width: 800px;
+        }
+
+        .back-button {
+            display: inline-block;
+            color: var(--cyan);
+            margin-bottom: 30px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1.5fr 0.7fr;
+            gap: 25px;
+        }
+
+        .detail-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .detail-card h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 23px;
+            margin: 12px 0;
+        }
+
+        .detail-card p,
+        .detail-card li {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .detail-card ul {
+            padding-left: 22px;
+        }
+
+        .detail-card li {
+            margin: 10px 0;
+        }
+
+        .diagram {
+            padding: 20px;
+            background: #080f1c;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            color: var(--cyan);
+            font-family: monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .notice {
+            margin-top: 20px;
+            padding: 15px;
+
+            border-left: 3px solid var(--gold);
+            background: rgba(215,189,131,0.07);
+
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* CONTACTO */
+
+        .contact-box {
+            padding: 45px;
+
+            border: 1px solid rgba(125,227,245,0.25);
+            border-radius: 12px;
+
+            background:
+                radial-gradient(
+                    ellipse at 90% 0%,
+                    rgba(125,227,245,0.12),
+                    transparent 50%
+                ),
+                var(--panel);
+        }
+
+        .contact-box h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 35px;
+            margin: 12px 0;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            color: #77869b;
+            font-size: 12px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media(max-width: 800px) {
+
+            .presentation-grid,
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .navbar {
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            .projects-grid,
+            .services-grid,
+            .specialties {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .contact-box {
+                padding: 25px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVEGACIÓN -->
+
+<header id="main-header">
+
+    <div class="container navbar">
+
+        <a href="#inicio" class="logo">
+            NEXA<span>TECH</span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- PÁGINA PRINCIPAL -->
+
+<main id="home-page">
+
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Tecnología · Infraestructura · Seguridad
+            </div>
+
+            <h1>
+                <span class="gradient">
+                    IT & Cybersecurity
+                </span>
+                <br>
+                Services
+            </h1>
+
+            <h2>
+                Infraestructura, redes y seguridad
+                para pequeñas empresas.
+            </h2>
+
+            <p>
+                La tecnología debería ayudarte a trabajar con
+                tranquilidad, no convertirse en otra preocupación.
+
+                En NexaTech el enfoque es claro: entender qué
+                necesitas, explicar las opciones sin tecnicismos
+                innecesarios y construir soluciones ordenadas,
+                prácticas y fáciles de mantener.
+
+                Mi objetivo es que cada proyecto tenga una
+                solución bien pensada y adaptada a sus necesidades.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#proyectos" class="button">
+                    Explorar proyectos
+                </a>
+
+                <a href="#contacto" class="button secondary">
+                    Hablemos de tu idea
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRESENTACIÓN Y ESPECIALIDADES -->
+
+<section id="presentacion">
+
+    <div class="container presentation-grid">
+
+        <div class="presentation-text">
+
+            <div class="eyebrow">
+                Presentación
+            </div>
+
+            <h2 class="section-title">
+                Tecnología bien pensada.
+                <br>
+                <span class="gradient">
+                    Confianza en cada paso.
+                </span>
+            </h2>
+
+            <p>
+                Detrás de cada equipo, red o aplicación hay
+                personas que necesitan que todo funcione.
+
+                Por eso, una buena solución tecnológica no
+                consiste solamente en instalar herramientas:
+                también implica escuchar, planificar, documentar
+                y dejar las cosas claras.
+            </p>
+
+            <p>
+                Mi formación y mis proyectos se centran en
+                distintas áreas de sistemas y tecnologías de
+                la información.
+
+                Me interesa especialmente conectar la parte
+                práctica de la infraestructura con una manera
+                responsable de trabajar: comprender el entorno,
+                valorar las necesidades y elegir soluciones
+                proporcionadas a cada situación.
+            </p>
+
+            <p>
+                Estos son los ámbitos en los que estoy
+                especializado:
+            </p>
+
+
+            <div class="specialties">
+
+                <div class="specialty">
+                    Implantación de sistemas operativos
+                </div>
+
+                <div class="specialty">
+                    Planificación y administración de redes
+                </div>
+
+                <div class="specialty">
+                    Fundamentos de hardware
+                </div>
+
+                <div class="specialty">
+                    Gestión de bases de datos
+                </div>
+
+                <div class="specialty">
+                    Lenguajes de marcas y sistemas de gestión de información
+                </div>
+
+                <div class="specialty">
+                    Implantación de aplicaciones web
+                </div>
+
+                <div class="specialty">
+                    Administración de sistemas gestores de bases de datos
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="presentation-card">
+
+            <div class="eyebrow">
+                Mi forma de trabajar
+            </div>
+
+            <h3>
+                Claridad antes que complicaciones.
+            </h3>
+
+            <p>
+                Me gusta que cada proyecto tenga un objetivo
+                definido, una solución que se pueda explicar
+                y documentación que permita entender qué se
+                ha hecho y por qué.
+
+                La confianza también se construye siendo
+                transparente con el alcance y con los límites
+                de cada trabajo.
+            </p>
+
+            <br>
+
+            <p>
+                Creo que la tecnología debe ser una herramienta
+                que facilite las cosas, no algo que las complique.
+                Por eso doy importancia tanto al resultado
+                técnico como a la experiencia de la persona
+                que recibe el servicio.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Qué puedo aportar
+        </div>
+
+        <h2 class="section-title">
+            Servicios tecnológicos
+        </h2>
+
+        <p class="section-description">
+            Una infraestructura bien configurada ayuda a
+            trabajar mejor, reducir problemas y mantener
+            los sistemas organizados.
+
+            Estas son las áreas en las que centro mi
+            aprendizaje y desarrollo profesional.
+        </p>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">⌘</div>
+
+                <h3>
+                    Administración de sistemas
+                </h3>
+
+                <p>
+                    Instalación, configuración y mantenimiento
+                    de sistemas Windows y Linux.
+
+                    Preparación de servidores, gestión de
+                    usuarios, permisos y resolución de
+                    incidencias técnicas.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">◈</div>
+
+                <h3>
+                    Redes y conectividad
+                </h3>
+
+                <p>
+                    Planificación de redes, configuración
+                    de dispositivos, segmentación y
+                    diagnóstico de conectividad.
+
+                    Diseño de soluciones adaptadas a
+                    pequeñas infraestructuras.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">⌁</div>
+
+                <h3>
+                    Infraestructura web
+                </h3>
+
+                <p>
+                    Implantación de aplicaciones web,
+                    despliegue de servicios y preparación
+                    de entornos mediante Docker.
+
+                    Organización de los componentes
+                    necesarios para mantener aplicaciones.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">◇</div>
+
+                <h3>
+                    Seguridad informática
+                </h3>
+
+                <p>
+                    Buenas prácticas de seguridad,
+                    configuración de firewalls, gestión
+                    de accesos y recomendaciones para
+                    mejorar la protección de los sistemas.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">⟡</div>
+
+                <h3>
+                    Bases de datos
+                </h3>
+
+                <p>
+                    Diseño, configuración y administración
+                    de bases de datos.
+
+                    Organización de información y
+                    mantenimiento de sistemas gestores.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">⌬</div>
+
+                <h3>
+                    Automatización con Python
+                </h3>
+
+                <p>
+                    Desarrollo de pequeños scripts
+                    para automatizar tareas repetitivas,
+                    procesar información y generar
+                    informes técnicos.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROYECTOS -->
+
+<section id="proyectos">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Laboratorio y aprendizaje aplicado
+        </div>
+
+        <h2 class="section-title">
+            Proyectos destacados
+        </h2>
+
+        <p class="section-description">
+            Creo que la mejor manera de demostrar conocimientos
+            técnicos es enseñar cómo se aplican.
+
+            Por eso, he planteado diferentes proyectos de
+            laboratorio que permiten explorar tecnologías,
+            resolver problemas y documentar soluciones.
+
+            Cada proyecto cuenta con su propia página,
+            donde se explica su arquitectura, objetivos,
+            herramientas y desarrollo.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROYECTO 1 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    PROYECTO 01
+                </div>
+
+                <h3>
+                    Firewall y segmentación de red
+                </h3>
+
+                <p>
+                    Diseño de una infraestructura de red
+                    mediante OPNsense, con diferentes
+                    segmentos y políticas de acceso.
+
+                    El objetivo es estudiar cómo organizar
+                    una red y controlar las comunicaciones
+                    entre sus diferentes zonas.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">OPNsense</span>
+                    <span class="tag">VLAN</span>
+                    <span class="tag">Redes</span>
+                    <span class="tag">Firewall</span>
+                </div>
+
+                <a href="#proyecto-firewall" class="project-link">
+                    Explorar proyecto →
+                </a>
+
+            </article>
+
+
+            <!-- PROYECTO 2 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    PROYECTO 02
+                </div>
+
+                <h3>
+                    Servidor Linux con Docker
+                </h3>
+
+                <p>
+                    Creación de un servidor Linux capaz
+                    de ejecutar diferentes servicios
+                    mediante contenedores.
+
+                    El proyecto se centra en la organización,
+                    configuración y mantenimiento de
+                    infraestructura.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Linux</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Compose</span>
+                    <span class="tag">Servidores</span>
+                </div>
+
+                <a href="#proyecto-docker" class="project-link">
+                    Explorar proyecto →
+                </a>
+
+            </article>
+
+
+            <!-- PROYECTO 3 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    PROYECTO 03
+                </div>
+
+                <h3>
+                    Monitorización de infraestructura
+                </h3>
+
+                <p>
+                    Desarrollo de un sistema de
+                    monitorización para observar el
+                    funcionamiento de servidores,
+                    recopilar métricas y visualizar
+                    información mediante paneles.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Grafana</span>
+                    <span class="tag">Prometheus</span>
+                    <span class="tag">Linux</span>
+                </div>
+
+                <a href="#proyecto-monitorizacion" class="project-link">
+                    Explorar proyecto →
+                </a>
+
+            </article>
+
+
+            <!-- PROYECTO 4 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    PROYECTO 04
+                </div>
+
+                <h3>
+                    Automatización IT con Python
+                </h3>
+
+                <p>
+                    Desarrollo de herramientas para
+                    simplificar tareas administrativas,
+                    procesar información y generar
+                    informes de manera automatizada.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">JSON</span>
+                    <span class="tag">CSV</span>
+                    <span class="tag">Automatización</span>
+                </div>
+
+                <a href="#proyecto-python" class="project-link">
+                    Explorar proyecto →
+                </a>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="notice">
+            Los proyectos presentados son propuestas de
+            laboratorio y demostración técnica. Se irán
+            completando y documentando con resultados
+            reales a medida que avance su desarrollo.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="eyebrow">
+                Contacto
+            </div>
+
+            <h2>
+                ¿Hablamos de lo que necesitas?
+            </h2>
+
+            <p>
+                Cada proyecto tecnológico comienza con
+                una necesidad, una idea o un problema
+                que merece una solución.
+
+                Si tienes una consulta, necesitas orientación
+                tecnológica o quieres comentar una posible
+                colaboración, estaré encantado de escucharte.
+
+                Cuéntame brevemente qué necesitas y en qué
+                contexto. Así podremos valorar las opciones
+                y encontrar el siguiente paso más adecuado.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="mailto:ericverdugomz@gmail.com?subject=Consulta%20NexaTech"
+                    class="button"
+                >
+                    Enviar un correo →
+                </a>
+
+            </div>
+
+            <p style="margin-top: 20px; font-size: 14px;">
+                ericverdugomz@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- PÁGINAS DE PROYECTOS -->
+
+
+<!-- PROYECTO 1: FIREWALL -->
+
+<section id="proyecto-firewall" class="project-page">
+
+    <div class="container">
+
+        <div class="project-hero">
+
+            <a href="#proyectos" class="back-button">
+                ← Volver a proyectos
+            </a>
+
+            <div class="eyebrow">
+                Proyecto 01 · Redes y ciberseguridad
+            </div>
+
+            <h1>
+                <span class="gradient">
+                    Firewall y segmentación de red
+                </span>
+            </h1>
+
+            <p>
+                Diseño de una infraestructura de red
+                organizada y protegida mediante un
+                firewall central, diferentes segmentos
+                y políticas de comunicación.
+            </p>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        01 / Visión general
+                    </div>
+
+                    <h2>
+                        Descripción del proyecto
+                    </h2>
+
+                    <p>
+                        El objetivo de este proyecto es
+                        desarrollar una infraestructura
+                        de red de laboratorio que permita
+                        comprender cómo se organiza y
+                        protege una pequeña red empresarial.
+
+                        Para ello se utilizará OPNsense
+                        como solución de firewall, creando
+                        diferentes segmentos virtuales
+                        para separar los dispositivos
+                        según su función.
+
+                        Esta separación permite estudiar
+                        cómo controlar las comunicaciones
+                        y aplicar diferentes políticas
+                        de acceso.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        02 / Objetivos
+                    </div>
+
+                    <h2>
+                        Objetivos técnicos
+                    </h2>
+
+                    <ul>
+                        <li>
+                            Diseñar una arquitectura de red
+                            organizada.
+                        </li>
+
+                        <li>
+                            Configurar un firewall central
+                            mediante OPNsense.
+                        </li>
+
+                        <li>
+                            Crear diferentes segmentos
+                            de red mediante VLAN.
+                        </li>
+
+                        <li>
+                            Definir políticas de acceso
+                            siguiendo el principio de
+                            mínimo privilegio.
+                        </li>
+
+                        <li>
+                            Comprobar la conectividad
+                            entre los diferentes segmentos.
+                        </li>
+
+                        <li>
+                            Documentar la arquitectura
+                            y las pruebas realizadas.
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        03 / Arquitectura
+                    </div>
+
+                    <h2>
+                        Diseño de infraestructura
+                    </h2>
+
+                    <p>
+                        La arquitectura estará formada
+                        por un firewall central que
+                        gestionará las comunicaciones
+                        entre las diferentes redes.
+                    </p>
+
+                    <br>
+
+                    <div class="diagram">
+INTERNET / RED DE PRUEBAS
+          |
+          |
+     [OPNsense]
+          |
+    SWITCH VIRTUAL
+          |
+    -------------------
+    |        |        |
+ USUARIOS SERVIDORES ADMIN
+ VLAN 10  VLAN 20  VLAN 30
+                    </div>
+
+                    <br>
+
+                    <p>
+                        Cada segmento tendrá una función
+                        específica y unas políticas de
+                        comunicación documentadas.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        04 / Desarrollo
+                    </div>
+
+                    <h2>
+                        Fases del proyecto
+                    </h2>
+
+                    <ul>
+                        <li>
+                            Preparación del entorno
+                            virtualizado.
+                        </li>
+
+                        <li>
+                            Instalación de OPNsense.
+                        </li>
+
+                        <li>
+                            Diseño de la estructura
+                            de red.
+                        </li>
+
+                        <li>
+                            Configuración de segmentos.
+                        </li>
+
+                        <li>
+                            Definición de reglas de acceso.
+                        </li>
+
+                        <li>
+                            Pruebas de conectividad
+                            y documentación.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <aside>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Tecnologías
+                    </div>
+
+                    <h2>
+                        Stack tecnológico
+                    </h2>
+
+                    <ul>
+                        <li>OPNsense</li>
+                        <li>VirtualBox</li>
+                        <li>VLAN</li>
+                        <li>TCP/IP</li>
+                        <li>Redes virtuales</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Entregables
+                    </div>
+
+                    <h2>
+                        Resultado esperado
+                    </h2>
+
+                    <ul>
+                        <li>Diagrama de red.</li>
+                        <li>Documentación técnica.</li>
+                        <li>Matriz de reglas.</li>
+                        <li>Pruebas de conectividad.</li>
+                        <li>Conclusiones técnicas.</li>
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROYECTO 2: DOCKER -->
+
+<section id="proyecto-docker" class="project-page">
+
+    <div class="container">
+
+        <div class="project-hero">
+
+            <a href="#proyectos" class="back-button">
+                ← Volver a proyectos
+            </a>
+
+            <div class="eyebrow">
+                Proyecto 02 · Sistemas y servidores
+            </div>
+
+            <h1>
+                <span class="gradient">
+                    Servidor Linux con Docker
+                </span>
+            </h1>
+
+            <p>
+                Creación de una infraestructura basada
+                en Linux y Docker para desplegar y
+                administrar diferentes servicios
+                de manera organizada.
+            </p>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        01 / Visión general
+                    </div>
+
+                    <h2>
+                        Descripción del proyecto
+                    </h2>
+
+                    <p>
+                        Este proyecto consiste en preparar
+                        un servidor Linux capaz de ejecutar
+                        diferentes aplicaciones mediante
+                        contenedores Docker.
+
+                        La virtualización mediante
+                        contenedores permite mantener
+                        los servicios organizados,
+                        independientes y relativamente
+                        sencillos de desplegar.
+
+                        El objetivo es construir una
+                        infraestructura reproducible
+                        y documentada que facilite
+                        su mantenimiento.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        02 / Objetivos
+                    </div>
+
+                    <h2>
+                        Objetivos técnicos
+                    </h2>
+
+                    <ul>
+                        <li>
+                            Preparar un servidor Linux.
+                        </li>
+
+                        <li>
+                            Instalar y configurar Docker.
+                        </li>
+
+                        <li>
+                            Gestionar servicios mediante
+                            Docker Compose.
+                        </li>
+
+                        <li>
+                            Configurar almacenamiento
+                            persistente.
+                        </li>
+
+                        <li>
+                            Documentar los despliegues.
+                        </li>
+
+                        <li>
+                            Estudiar procedimientos
+                            de mantenimiento y recuperación.
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        03 / Arquitectura
+                    </div>
+
+                    <h2>
+                        Diseño del servidor
+                    </h2>
+
+                    <div class="diagram">
+       SERVIDOR LINUX
+              |
+        DOCKER ENGINE
+              |
+       DOCKER COMPOSE
+              |
+       ----------------
+       |      |       |
+      WEB   DATABASE MONITORING
+       |      |       |
+       ----------------
+              |
+       ALMACENAMIENTO
+         PERSISTENTE
+                    </div>
+
+                    <br>
+
+                    <p>
+                        Los servicios estarán organizados
+                        mediante configuraciones
+                        reproducibles y documentación
+                        específica.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        04 / Desarrollo
+                    </div>
+
+                    <h2>
+                        Fases del proyecto
+                    </h2>
+
+                    <ul>
+                        <li>Instalación de Debian o Ubuntu Server.</li>
+                        <li>Configuración inicial del sistema.</li>
+                        <li>Instalación de Docker Engine.</li>
+                        <li>Preparación de Docker Compose.</li>
+                        <li>Despliegue de servicios de prueba.</li>
+                        <li>Documentación y pruebas de recuperación.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <aside>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Tecnologías
+                    </div>
+
+                    <h2>
+                        Stack tecnológico
+                    </h2>
+
+                    <ul>
+                        <li>Debian / Ubuntu</li>
+                        <li>Docker</li>
+                        <li>Docker Compose</li>
+                        <li>Linux</li>
+                        <li>Terminal</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Entregables
+                    </div>
+
+                    <h2>
+                        Resultado esperado
+                    </h2>
+
+                    <ul>
+                        <li>Servidor configurado.</li>
+                        <li>Archivos Compose.</li>
+                        <li>Documentación de servicios.</li>
+                        <li>Procedimientos de backup.</li>
+                        <li>Guía de mantenimiento.</li>
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROYECTO 3: MONITORIZACIÓN -->
+
+<section id="proyecto-monitorizacion" class="project-page">
+
+    <div class="container">
+
+        <div class="project-hero">
+
+            <a href="#proyectos" class="back-button">
+                ← Volver a proyectos
+            </a>
+
+            <div class="eyebrow">
+                Proyecto 03 · Monitorización
+            </div>
+
+            <h1>
+                <span class="gradient">
+                    Monitorización de infraestructura
+                </span>
+            </h1>
+
+            <p>
+                Implementación de un sistema de
+                observabilidad para recopilar métricas
+                y visualizar el estado de diferentes
+                servidores y servicios.
+            </p>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        01 / Visión general
+                    </div>
+
+                    <h2>
+                        Descripción del proyecto
+                    </h2>
+
+                    <p>
+                        La monitorización es una parte
+                        importante de la administración
+                        de sistemas.
+
+                        Permite conocer el comportamiento
+                        de una infraestructura, observar
+                        el consumo de recursos y detectar
+                        posibles incidencias.
+
+                        En este proyecto se plantea
+                        una solución basada en Prometheus
+                        y Grafana para recopilar y
+                        representar métricas de diferentes
+                        equipos de laboratorio.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        02 / Objetivos
+                    </div>
+
+                    <h2>
+                        Objetivos técnicos
+                    </h2>
+
+                    <ul>
+                        <li>
+                            Instalar Prometheus.
+                        </li>
+
+                        <li>
+                            Configurar la recopilación
+                            de métricas.
+                        </li>
+
+                        <li>
+                            Instalar Grafana.
+                        </li>
+
+                        <li>
+                            Crear paneles de visualización.
+                        </li>
+
+                        <li>
+                            Analizar el comportamiento
+                            de los sistemas.
+                        </li>
+
+                        <li>
+                            Documentar los indicadores
+                            utilizados.
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        03 / Arquitectura
+                    </div>
+
+                    <h2>
+                        Diseño de monitorización
+                    </h2>
+
+                    <div class="diagram">
+       SERVIDORES LINUX
+              |
+          EXPORTERS
+              |
+         PROMETHEUS
+              |
+           GRAFANA
+              |
+      PANELES DE CONTROL
+              |
+       MÉTRICAS VISUALES
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        04 / Desarrollo
+                    </div>
+
+                    <h2>
+                        Fases del proyecto
+                    </h2>
+
+                    <ul>
+                        <li>Preparación del entorno.</li>
+                        <li>Instalación de Prometheus.</li>
+                        <li>Configuración de exporters.</li>
+                        <li>Instalación de Grafana.</li>
+                        <li>Creación de dashboards.</li>
+                        <li>Pruebas y documentación.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <aside>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Tecnologías
+                    </div>
+
+                    <h2>
+                        Stack tecnológico
+                    </h2>
+
+                    <ul>
+                        <li>Prometheus</li>
+                        <li>Grafana</li>
+                        <li>Node Exporter</li>
+                        <li>Linux</li>
+                        <li>Docker</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Entregables
+                    </div>
+
+                    <h2>
+                        Resultado esperado
+                    </h2>
+
+                    <ul>
+                        <li>Entorno de monitorización.</li>
+                        <li>Paneles personalizados.</li>
+                        <li>Métricas documentadas.</li>
+                        <li>Pruebas de funcionamiento.</li>
+                        <li>Conclusiones técnicas.</li>
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROYECTO 4: PYTHON -->
+
+<section id="proyecto-python" class="project-page">
+
+    <div class="container">
+
+        <div class="project-hero">
+
+            <a href="#proyectos" class="back-button">
+                ← Volver a proyectos
+            </a>
+
+            <div class="eyebrow">
+                Proyecto 04 · Automatización
+            </div>
+
+            <h1>
+                <span class="gradient">
+                    Automatización IT con Python
+                </span>
+            </h1>
+
+            <p>
+                Desarrollo de pequeñas herramientas
+                para automatizar tareas administrativas,
+                procesar información y generar
+                informes técnicos.
+            </p>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        01 / Visión general
+                    </div>
+
+                    <h2>
+                        Descripción del proyecto
+                    </h2>
+
+                    <p>
+                        En la administración de sistemas
+                        existen numerosas tareas repetitivas
+                        que pueden simplificarse mediante
+                        pequeños programas.
+
+                        Python permite desarrollar
+                        herramientas capaces de procesar
+                        información, organizar datos
+                        y generar informes automáticamente.
+
+                        Este proyecto plantea una colección
+                        de scripts orientados a la
+                        administración IT, utilizando
+                        datos de prueba y procedimientos
+                        documentados.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        02 / Objetivos
+                    </div>
+
+                    <h2>
+                        Objetivos técnicos
+                    </h2>
+
+                    <ul>
+                        <li>
+                            Desarrollar scripts en Python.
+                        </li>
+
+                        <li>
+                            Procesar archivos CSV y JSON.
+                        </li>
+
+                        <li>
+                            Automatizar tareas repetitivas.
+                        </li>
+
+                        <li>
+                            Generar informes.
+                        </li>
+
+                        <li>
+                            Implementar validación de datos.
+                        </li>
+
+                        <li>
+                            Gestionar errores y registros.
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        03 / Arquitectura
+                    </div>
+
+                    <h2>
+                        Funcionamiento
+                    </h2>
+
+                    <div class="diagram">
+       DATOS DE ENTRADA
+          CSV / JSON
+              |
+         PYTHON SCRIPT
+              |
+        VALIDACIÓN
+              |
+       PROCESAMIENTO
+              |
+       INFORME FINAL
+              |
+       REGISTRO DE LOGS
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        04 / Desarrollo
+                    </div>
+
+                    <h2>
+                        Fases del proyecto
+                    </h2>
+
+                    <ul>
+                        <li>Preparación del entorno Python.</li>
+                        <li>Creación de datos de prueba.</li>
+                        <li>Desarrollo de scripts.</li>
+                        <li>Validación de entradas.</li>
+                        <li>Generación de informes.</li>
+                        <li>Pruebas y documentación.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <aside>
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Tecnologías
+                    </div>
+
+                    <h2>
+                        Stack tecnológico
+                    </h2>
+
+                    <ul>
+                        <li>Python</li>
+                        <li>JSON</li>
+                        <li>CSV</li>
+                        <li>Logging</li>
+                        <li>Visual Studio Code</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="eyebrow">
+                        Entregables
+                    </div>
+
+                    <h2>
+                        Resultado esperado
+                    </h2>
+
+                    <ul>
+                        <li>Código fuente.</li>
+                        <li>Scripts documentados.</li>
+                        <li>Datos de prueba.</li>
+                        <li>Informes generados.</li>
+                        <li>Guía de utilización.</li>
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 NexaTech · IT & Cybersecurity Services
+        </p>
+
+        <p>
+            Infraestructura, redes y seguridad.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT: NAVEGACIÓN ENTRE PÁGINAS -->
+
+<script>
+
+    const homePage = document.getElementById("home-page");
+
+    const projectPages = document.querySelectorAll(".project-page");
+
+    const header = document.getElementById("main-header");
+
+
+    function navigate() {
+
+        const currentPage = window.location.hash;
+
+        // Ocultar todas las páginas de proyectos
+
+        projectPages.forEach(page => {
+            page.classList.remove("active");
+        });
+
+
+        // Mostrar la página principal
+
+        if (
+            currentPage === "" ||
+            currentPage === "#inicio" ||
+            currentPage === "#servicios" ||
+            currentPage === "#proyectos" ||
+            currentPage === "#contacto" ||
+            currentPage === "#presentacion"
+        ) {
+
+            homePage.style.display = "block";
+
+            header.style.display = "block";
+
+            return;
+        }
+
+
+        // Mostrar el proyecto seleccionado
+
+        const selectedPage = document.querySelector(currentPage);
+
+        if (
+            selectedPage &&
+            selectedPage.classList.contains("project-page")
+        ) {
+
+            homePage.style.display = "none";
+
+            selectedPage.classList.add("active");
+
+            header.style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        } else {
+
+            homePage.style.display = "block";
+
+        }
+
+    }
+
+
+    // Detectar cambios en la navegación
+
+    window.addEventListener("hashchange", navigate);
+
+
+    // Ejecutar al cargar la web
+
+    navigate();
+
+</script>
+
+
+</body>
+</html>
